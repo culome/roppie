@@ -39,6 +39,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           transform(option, node) {
             const section = option.url.split('/').filter(Boolean).at(-1);
             const icons: Record<string, ReactNode> = {
+              'claude-for-legal': (
+                <ProductIcon color="#0d9488">
+                  <path d="M12 3v18M8 8h8M8 12h8M8 16h5" />
+                  <rect x="4" y="3" width="16" height="18" rx="2" />
+                </ProductIcon>
+              ),
               framework: (
                 <ProductIcon color="#f59e0b">
                   <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -61,7 +67,8 @@ export default function Layout({ children }: { children: ReactNode }) {
 
             return {
               ...option,
-              icon: section ? icons[section] : node.icon,
+              icon:
+                section && icons[section] ? icons[section] : node.icon,
             };
           },
         },
