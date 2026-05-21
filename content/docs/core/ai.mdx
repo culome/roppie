@@ -1,0 +1,477 @@
+---
+title: AI Agent 学习路线
+description: AI Agent 学习路线
+---
+
+# Skill / Agent Skill 系统学习路线
+
+如果你想系统学习 “Skill / Agent Skill / Tool Skill” 的设计，建议不要只学某一个框架，而是按下面这个路线学习：
+
+```text
+Prompt → Tool Calling → Agent → Skill → Workflow → Multi-Agent → MCP
+```
+
+因为很多人一上来学 CrewAI 或 LangGraph，最后只是会“搭积木”，但不会真正设计 Skill。
+
+下面按“最值得学”的顺序整理。
+
+---
+
+# 一、最推荐的英文体系（偏工程化）
+
+## 1. DeepLearning.AI Agent Courses
+
+官网：
+
+https://www.deeplearning.ai/short-courses/
+
+推荐课程：
+
+- LangChain for LLM Application Development
+- Building Systems with ChatGPT
+- AI Agentic Design Patterns
+- Multi AI Agent Systems
+- MCP / Generative UI 相关课程
+
+重点内容：
+
+- Tool Calling
+- Agent Memory
+- Agent Workflow
+- Skill Routing
+- RAG Agent
+- MCP
+
+尤其推荐：
+
+Build Interactive Agents with Generative UI
+
+https://www.deeplearning.ai/alpha/short-courses/build-interactive-agents-with-generative-ui/
+
+涉及：
+
+- Agent UI
+- MCP Apps
+- Tool Discovery
+- Interactive Skill
+
+这一层已经非常接近企业级 Agent 系统。
+
+---
+
+## 2. LangGraph Documentation
+
+官网：
+
+https://langchain-ai.github.io/langgraph/
+
+核心理念：
+
+```text
+Skill ≠ Prompt
+Skill = 状态 + 工具 + 路由 + Memory + 执行节点
+```
+
+重点学习：
+
+- StateGraph
+- Node
+- ToolNode
+- Conditional Edge
+- Memory
+- Human-in-the-loop
+
+非常适合：
+
+```text
+合同分类
+→ 条款提取
+→ 风险审查
+→ 法律依据
+→ 修改建议
+```
+
+这种流程型法审系统。
+
+---
+
+## 3. CrewAI Documentation
+
+官网：
+
+https://docs.crewai.com/
+
+适合理解：
+
+```text
+Role-based Skill
+```
+
+例如：
+
+```text
+法务Agent
+财务Agent
+税务Agent
+知识产权Agent
+```
+
+重点能力：
+
+- Tool
+- Memory
+- MCP
+- Knowledge
+- Guardrails
+
+推荐课程：
+
+https://www.coursera.org/learn/crewai-tools-mcp-agentic-rag
+
+涉及：
+
+- Tool
+- Agentic RAG
+- MCP
+- 权限
+- Memory
+
+---
+
+## 4. Anthropic MCP Docs
+
+官网：
+
+https://modelcontextprotocol.io/
+
+非常关键。
+
+未来：
+
+```text
+Skill
+≈ MCP Tool
+≈ Capability
+```
+
+企业 Agent 最终通常会：
+
+```text
+内部系统
+→ MCP Server
+→ Agent 调用
+```
+
+你的合同系统中的：
+
+- 法律库
+- 审查规则
+- 合同模板
+- OCR
+- 企业制度
+
+未来都可以 MCP 化。
+
+建议搭配：
+
+- Claude Desktop
+- Cursor
+- Open WebUI
+- FastMCP
+
+一起学习。
+
+---
+
+## 5. Semantic Kernel Docs
+
+官网：
+
+https://learn.microsoft.com/en-us/semantic-kernel/overview/
+
+微软的企业级 Agent 框架。
+
+早期概念：
+
+```text
+Semantic Skills
+Native Skills
+```
+
+非常适合：
+
+- 企业工作流
+- 规则系统
+- 权限系统
+- Function Calling
+
+核心理念与企业法审系统非常接近。
+
+---
+
+# 二、最值得看的 GitHub / 开源教程
+
+## 1. LLM Agents Ecosystem Handbook
+
+GitHub：
+
+https://github.com/oxbshw/LLM-Agents-Ecosystem-Handbook
+
+内容包括：
+
+- 60+ agent skeletons
+- MCP
+- RAG
+- Memory
+- Workflow
+- Framework Compare
+
+适合系统性学习。
+
+---
+
+## 2. awesome-ai-agents-2026
+
+GitHub：
+
+https://github.com/caramaschiHG/awesome-ai-agents-2026
+
+适合学习：
+
+```text
+Agent 全景图谱
+```
+
+包括：
+
+- LangGraph
+- CrewAI
+- AutoGen
+- PydanticAI
+- MCP
+- Guardrails
+- Observability
+
+---
+
+## 3. Microsoft Semantic Kernel Samples
+
+GitHub：
+
+https://github.com/microsoft/semantic-kernel/tree/main/python/samples
+
+重点看：
+
+- Planner
+- Plugins
+- Memory
+- Function Calling
+
+核心理解：
+
+```text
+Skill 本质就是：
+可组合能力模块
+```
+
+---
+
+# 三、中文教程（真正有价值的）
+
+中文目前很多教程仍停留在：
+
+```text
+Prompt Engineering
+```
+
+真正讲：
+
+- Agent Architecture
+- Skill Design
+- MCP
+- Workflow
+- Multi-Agent
+
+的不多。
+
+---
+
+## 1. B站推荐关键词
+
+搜索：
+
+```text
+LangGraph 教程
+CrewAI 教程
+MCP 教程
+Semantic Kernel 教程
+```
+
+重点看：
+
+- 实战项目
+- 工作流
+- Tool Calling
+
+不要只看：
+
+```text
+“10分钟做AI Agent”
+```
+
+这种浅层内容。
+
+---
+
+## 2. 知乎推荐关键词
+
+推荐搜索：
+
+```text
+Agentic Workflow
+MCP
+LangGraph
+AI工作流
+Tool Calling
+Function Calling
+```
+
+质量通常比：
+
+```text
+AI智能体
+```
+
+高很多。
+
+---
+
+## 3. 值得研究的平台
+
+建议研究这些产品的 Skill / Workflow 架构：
+
+- Dify
+- Coze（扣子）
+- FastGPT
+- n8n
+
+重点观察：
+
+```text
+Plugin
+Workflow
+Tool
+Knowledge
+Node
+```
+
+这些设计。
+
+官网：
+
+- https://dify.ai/
+- https://www.coze.cn/
+- https://fastgpt.io/
+- https://n8n.io/
+
+---
+
+# 四、最应该重点学习的东西（非常重要）
+
+很多人误以为：
+
+```text
+Skill = 一个 Prompt
+```
+
+真正成熟的 Skill 应该是：
+
+```text
+Skill:
+  Input Schema
+  Output Schema
+  Tool Access
+  Memory
+  Permission
+  Workflow
+  Retry
+  Validation
+  Guardrails
+```
+
+例如：
+
+```text
+付款风险审查 Skill
+```
+
+未来应该包含：
+
+```text
+输入：
+- 合同
+- 条款
+- 企业规则
+
+执行：
+- 提取付款条款
+- 判断账期
+- 判断违约风险
+- 检查发票要求
+
+输出：
+- 风险等级
+- 法律依据
+- 修改建议
+```
+
+这已经不是 Prompt。
+
+而是：
+
+```text
+企业级 Capability
+```
+
+---
+
+# 五、推荐学习路线（适合法审方向）
+
+建议路线：
+
+```text
+第一阶段：
+LangChain / Tool Calling
+
+第二阶段：
+LangGraph
+
+第三阶段：
+CrewAI
+
+第四阶段：
+MCP
+
+第五阶段：
+企业级 Skill 架构
+```
+
+最终你会逐渐进入：
+
+```text
+法律 Agent Platform
+```
+
+而不是：
+
+```text
+普通聊天机器人
+```
+
+你的方向其实已经开始接近：
+
+- AI Workflow Engine
+- Legal Agent OS
+- Enterprise AI Capability Platform
+
+这一层了。

@@ -2,5 +2,5 @@
   "title": "Fumadocs Core",
   "description": "The headless library",
   "root": true,
-  "pages": ["index", "source-loader", "design"]
+  "pages": ["index", "source-loader", "design", "ai"]
 }
