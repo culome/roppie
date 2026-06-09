@@ -37,7 +37,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       sidebar={{
         tabs: {
           transform(option, node) {
-            const section = option.url.split('/').filter(Boolean).at(-1);
+            const parts = option.url.split('/').filter(Boolean);
+            const section = parts[0] === 'docs' ? parts[1] : parts[0];
             const icons: Record<string, ReactNode> = {
               'claude-for-legal': (
                 <ProductIcon color="#0d9488">
@@ -61,6 +62,13 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <ProductIcon color="#6d5dfc">
                   <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" />
                   <path d="M12 12 4 7.5M12 12l8-4.5M12 12v9" />
+                </ProductIcon>
+              ),
+              language: (
+                <ProductIcon color="#10b981">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18" />
+                  <path d="M3.6 9h16.8M3.6 15h16.8" />
                 </ProductIcon>
               ),
             };

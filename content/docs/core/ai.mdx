@@ -475,3 +475,55 @@ MCP
 - Enterprise AI Capability Platform
 
 这一层了。
+
+
+## Claude 描述的 什么是Skill：
+什么是 Skills
+
+  Skills 是预定义的"专项能力包"——每个 skill 都针对一类任务封装了最佳实践、工具调用模板和检查清单。当你触发一个 skill
+  时,我会切换到那套流程上,而不是从零思考。
+
+  调用方式有两种:
+  1. 直接打 /skill-name(比如 /review、/verify)
+  2. 用自然语言描述任务,我会自动识别并调用匹配的 skill
+
+  一个示例:claude-api
+
+  这个 skill 专门处理"用 Anthropic SDK 写代码"的场景。它会自动:
+  - 用最新的模型 ID(比如 claude-opus-4-7)
+  - 默认加上 prompt caching(省钱省延迟)
+  - 用正确的 SDK 调用模式
+
+  如果你直接说"帮我写个调用 Claude 的 Python 脚本",我会触发它;如果你打 /claude-api,也会触发。
+
+
+  ⏺ 第一部分:Skills 的工作机制
+
+  Skills 本质上是按需加载的 prompt 包。它们是这样运作的:
+
+  1. 注册
+  
+  每个 skill 是一个文件,放在某个目录里(全局 ~/.claude/skills/、项目 .claude/skills/,或者由 plugin 提供)。文件有 frontmatter,里面声明:
+  - name:slug,用于 /name 调用
+  - description:告诉我"什么时候该用这个 skill"
+
+  2. 发现
+
+  启动会话时,系统会把所有可用 skill 的 name + description 注入到我的 system reminder 里(你刚才那个长长的 skills
+  列表就是)。我只能看到名字和描述,看不到内部内容——直到被触发。
+
+  3. 触发
+
+  有两条路径:
+  - 显式: 你打 /skill-name,系统在下一轮把 skill 完整内容塞给我
+  - 隐式: 你的自然语言描述匹配某个 skill 的 description,我主动调用 Skill 工具
+
+  4. 执行
+
+  被触发后,skill 的完整内容(可能包含步骤清单、工具用法、注意事项、参考代码)进入我的上下文。我按它的指令工作,而不是从零开始推理。
+
+  5. 关键约束
+
+  - 我不能编造 skill 名字。如果列表里没有,我就没有这个能力。
+  - Skills 不是 memory——它们是流程模板,不存事实。
+  - 一旦 skill 内容被加载,这一轮我就按它走,不会再调用 Skill 工具触发同一个 skill。
