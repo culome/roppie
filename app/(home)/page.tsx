@@ -11,10 +11,10 @@ import { useRef, type ReactNode, type MouseEvent } from 'react';
 
 const sections = [
   {
-    title: 'Language',
-    zh: '语言学习',
-    href: '/language/de/01',
-    description: '德语、西语、法语、意语的系统学习笔记，含视频与音频。',
+    title: 'Deutsch',
+    zh: '德语',
+    href: '/de/A0',
+    description: '德语语音、字母与基础语法，新求精课程笔记，含视频。',
     color: '#10b981',
     icon: (
       <>
@@ -25,41 +25,44 @@ const sections = [
     ),
   },
   {
-    title: 'Fumadocs Core',
-    zh: '核心库',
-    href: '/core',
-    description: '无头文档库，负责内容加载、搜索与页面树生成。',
-    color: '#6d5dfc',
-    icon: (
-      <>
-        <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" />
-        <path d="M12 12 4 7.5M12 12l8-4.5M12 12v9" />
-      </>
-    ),
-  },
-  {
-    title: 'Framework',
-    zh: '框架',
-    href: '/framework',
-    description: '路由约定、页面组织与文档框架的整体设计。',
+    title: 'Español',
+    zh: '西班牙语',
+    href: '/es/A1-L3',
+    description: '新版现代西班牙语，发音与词汇的系统学习笔记。',
     color: '#f59e0b',
     icon: (
       <>
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01" />
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18" />
+        <path d="M3.6 9h16.8M3.6 15h16.8" />
       </>
     ),
   },
   {
-    title: 'Fumadocs UI',
-    zh: '界面主题',
-    href: '/ui',
-    description: '默认主题与可复用组件，开箱即用的精美界面。',
+    title: 'Français',
+    zh: '法语',
+    href: '/fr',
+    description: '你好法语、北外法语、走遍法国，法语语音入门。',
     color: '#3b82f6',
     icon: (
       <>
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <path d="M8 4v16M3 9h18" />
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18" />
+        <path d="M3.6 9h16.8M3.6 15h16.8" />
+      </>
+    ),
+  },
+  {
+    title: 'Italiano',
+    zh: '意大利语',
+    href: '/it/01',
+    description: '新视线意大利语，名词、冠词与动词变位，含教材 PDF。',
+    color: '#ef4444',
+    icon: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18" />
+        <path d="M3.6 9h16.8M3.6 15h16.8" />
       </>
     ),
   },
@@ -169,7 +172,10 @@ function Hero() {
           variants={rise}
           className="mt-6 max-w-xl text-balance text-lg text-fd-muted-foreground"
         >
-          语言、技术与思考的集合。一个安静、清晰、用心组织的知识库，
+          语言、技术与思考的集合。
+          <br />
+          一个安静、清晰、用心组织的知识库，
+          <br />
           随时翻阅，长久陪伴。
         </motion.p>
 
@@ -178,7 +184,7 @@ function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="/language/de/01"
+            href="/de/A0"
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-fd-foreground px-7 py-3 font-medium text-fd-background transition-transform hover:scale-[1.03] active:scale-95"
           >
             <span className="relative z-10">开始阅读</span>
@@ -195,7 +201,7 @@ function Hero() {
             </svg>
           </Link>
           <Link
-            href="/core"
+            href="/other/core"
             className="inline-flex items-center gap-2 rounded-full border border-fd-border px-7 py-3 font-medium transition-colors hover:bg-fd-accent"
           >
             浏览全部
@@ -340,7 +346,7 @@ function Closing() {
           细水长流的坚持，是学习外语与一切技能最重要的事。
         </p>
         <Link
-          href="/language/de/01"
+          href="/de/A0"
           className="mt-8 inline-flex items-center gap-2 rounded-full bg-fd-foreground px-7 py-3 font-medium text-fd-background transition-transform hover:scale-[1.03] active:scale-95"
         >
           现在开始

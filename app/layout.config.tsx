@@ -14,12 +14,20 @@ export const baseOptions: BaseLayoutProps = {
         <svg
           width="24"
           height="24"
+          viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
-          aria-label="Logo"
+          aria-label="LANG"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <circle cx={12} cy={12} r={12} fill="currentColor" />
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18" />
+          <path d="M3.6 9h16.8M3.6 15h16.8" />
         </svg>
-        Fumadocs
+        <span className="font-semibold tracking-wide">LANG</span>
       </>
     ),
   },

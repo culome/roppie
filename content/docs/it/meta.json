@@ -1,0 +1,6 @@
+{
+  "title": "Italiano",
+  "description": "意大利语",
+  "root": true,
+  "pages": ["L07", "L08", "L09", "L10", "L11", "pdf"]
+}

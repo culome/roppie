@@ -1,6 +1,5 @@
 {
   "title": "Fumadocs UI",
   "description": "The default theme",
-  "root": true,
   "pages": ["index", "components"]
 }

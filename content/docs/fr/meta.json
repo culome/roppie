@@ -1,4 +1,6 @@
 {
   "title": "Français",
+  "description": "法语",
+  "root": true,
   "pages": ["index", "Clara-L0", "Clara-L1"]
 }
